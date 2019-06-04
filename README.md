@@ -21,7 +21,7 @@ To run the project :
 # Design Pattern
 VIPER
 
-<img width="1081" alt="Screenshot 2019-06-04 at 11 48 46 AM" src="https://user-images.githubusercontent.com/31967294/58858332-ed08ce00-86c4-11e9-8e3d-31177b3408bc.png">
+
 
 What is Viper ?
 Viper is a design pattern that implements ‘separation of concern’ paradigm. For each module VIPER has five (sometimes four) 
@@ -109,7 +109,6 @@ Any changes can be made in .swiftlint.yml file, which is located in project root
 
 # Code Coverage
 - Just need to run Test on Xcode ( cmd+U )
-- Code coverage of CoreData class is less because NSBatchDeleteRequest is not supported for InMemory type persistence store coordinator.
 
 
 # Unit Testing
