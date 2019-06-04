@@ -21,7 +21,7 @@ To run the project :
 # Design Pattern
 VIPER
 
-<img width="1063" alt="Screenshot 2019-05-31 at 5 23 03 PM" src="https://user-images.githubusercontent.com/31967294/58704260-ff36f380-83c8-11e9-846d-223467a96f49.png">
+<img width="1081" alt="Screenshot 2019-06-04 at 11 48 46 AM" src="https://user-images.githubusercontent.com/31967294/58858332-ed08ce00-86c4-11e9-8e3d-31177b3408bc.png">
 
 What is Viper ?
 Viper is a design pattern that implements ‘separation of concern’ paradigm. For each module VIPER has five (sometimes four) 
