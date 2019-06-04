@@ -1,5 +1,5 @@
-# DOOR-DELIVER
- DOOR-DELIVER is an iOS application which shows list of deliverables that can be ANYTHING and delivered to ANYWHERE.
+# DOOR-DELIVERY
+ DOOR-DELIVERY is an iOS application which shows list of deliverables that can be ANYTHING and delivered to ANYWHERE.
  The customer address is shown on Apple Map along with the customer name.
 
 
