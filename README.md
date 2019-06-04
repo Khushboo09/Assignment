@@ -35,7 +35,6 @@ Upon receiving a response View alerts the Presenter.
 
 Presenter: Nucleus of a module. It gets user response from the View and work accordingly. 
 Only class to communicate with all the other components. Calls the router for wire-framing,
-Interactor to fetch data (network calls or local data calls), view to update the UI.
 
 Interactor: Has the business logics of an app. Primarily make API calls and local storage to fetch or save data.
 
