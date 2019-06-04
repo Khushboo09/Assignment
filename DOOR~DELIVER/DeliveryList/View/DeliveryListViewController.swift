@@ -51,7 +51,7 @@ class DeliveryListViewController: UIViewController {
     }
     
     @objc func pullToRefresh() {
-        
+        paging.offset = 0
         self.presenter?.pullToRefresh(paging: paging)
     }
 }
