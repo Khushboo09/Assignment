@@ -1,10 +1,3 @@
-//
-//  DeliveryDetailPresenter.swift
-//  DOOR~DELIVERTests
-//
-//  Created by Kanika on 31/05/19.
-//
-
 import XCTest
 @testable import DOOR_DELIVER
 

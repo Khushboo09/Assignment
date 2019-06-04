@@ -1,18 +1,17 @@
 import UIKit
 import SDWebImage
 import NotificationBannerSwift
-
+struct ActivityIndicator {
+    static var activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
+}
 class DeliveryListViewController: UIViewController {
     
     var listTableView = UITableView()
     var presenter: DeliveryListPresenterProtocol?
     var deliveryList: [Product] = []
     let refreshControl = UIRefreshControl()
-    //let activityIndicator = UIActivityIndicatorView(style: .gray)
+    let activityIndicator = UIActivityIndicatorView(style: .gray)
     var paging = Paging(offset: 0, limit: Constant.pagingLimit)
-    struct ActivityIndicator {
-        static var activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +62,7 @@ extension DeliveryListViewController: DeliveryListViewProtocol {
             self.refreshControl.endRefreshing()
             if self.deliveryList.isEmpty {
                 let noDataLabel: UILabel = UILabel(frame: self.listTableView.bounds)
-                noDataLabel.text = LocalizationConstant.nodeliveries
+                noDataLabel.text = "No deliveries.Retry by pulling upwards."
                 noDataLabel.textAlignment = .center
                 noDataLabel.sizeToFit()
                 let deadlineTime = DispatchTime.now() + .seconds(1)
@@ -71,11 +70,11 @@ extension DeliveryListViewController: DeliveryListViewProtocol {
                     self.listTableView.backgroundView = noDataLabel
                 }
             }
+            self.listTableView.backgroundView = nil
+            self.listTableView.reloadData()
+            let banner = StatusBarNotificationBanner(title: errorMessage, style: .danger)
             
-           let banner = StatusBarNotificationBanner(title: errorMessage, style: .danger)
-            banner.show(bannerPosition: .top)
-        }
-    }
+            banner.show(bannerPosition: .top)}}
     
     func showProducts(with delivery: [Product]) {
         
@@ -102,9 +101,9 @@ extension DeliveryListViewController: DeliveryListViewProtocol {
     
     func showBottomLoading() {
         DispatchQueue.main.async {
-            ActivityIndicator.activityIndicator.startAnimating()
-            ActivityIndicator.activityIndicator.center = self.view.center
-            self.listTableView.tableFooterView = ActivityIndicator.activityIndicator
+            self.activityIndicator.startAnimating()
+            self.activityIndicator.frame = CGRect(x: 0, y: 0, width: self.listTableView.bounds.width, height: Constant.Dimension.height.rawValue)
+            self.listTableView.tableFooterView = self.activityIndicator
             self.listTableView.tableFooterView?.isHidden = false
         }
     }
@@ -114,9 +113,9 @@ extension DeliveryListViewController: DeliveryListViewProtocol {
             
             ActivityIndicator.activityIndicator.stopAnimating()
             ActivityIndicator.activityIndicator.removeFromSuperview()
-            //self.refreshControl.endRefreshing()
+            self.refreshControl.endRefreshing()
             //self.refreshControl.removeFromSuperview()
-            ActivityIndicator.activityIndicator.stopAnimating()
+            self.activityIndicator.stopAnimating()
             self.listTableView.tableFooterView = UIView()
         }}
 }

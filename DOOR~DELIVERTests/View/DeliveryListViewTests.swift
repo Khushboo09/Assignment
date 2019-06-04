@@ -51,20 +51,20 @@ class DeliveryListViewTests: XCTestCase {
     
     func testshowLoading() {
         deliveryListView.showLoading()
-        XCTAssertNotNil(deliveryListView.activityIndicator)
+        XCTAssertNotNil(ActivityIndicator.activityIndicator)
         
     }
     
     func testhideLoading() {
         deliveryListView.hideLoading()
-        XCTAssertNotNil(deliveryListView.activityIndicator)
-         XCTAssertTrue(!deliveryListView.activityIndicator.isAnimating)
+        XCTAssertNotNil(ActivityIndicator.activityIndicator)
+         XCTAssertTrue(!ActivityIndicator.activityIndicator.isAnimating)
         
     }
     
     func testshowBottomLoading() {
        deliveryListView.showBottomLoading()
-        XCTAssertNotNil(deliveryListView.activityIndicator)
+        XCTAssertNotNil(ActivityIndicator.activityIndicator)
     }
     
     func testshowProducts() {
