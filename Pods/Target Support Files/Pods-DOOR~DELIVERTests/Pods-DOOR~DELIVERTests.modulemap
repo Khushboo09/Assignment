@@ -1,6 +1,0 @@
-framework module Pods_DOOR_DELIVERTests {
-  umbrella header "Pods-DOOR~DELIVERTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
