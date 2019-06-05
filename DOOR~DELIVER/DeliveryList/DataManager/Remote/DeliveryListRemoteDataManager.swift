@@ -9,16 +9,14 @@ class DeliveryListRemoteDataManager: DeliveryListRemoteDataManagerInputProtocol 
     func retrieveDeliveryList(_ params: [String: Any]) {
         self.apiGet(serviceName: Endpoints.Deliveries.fetch.url, parameters: params) { (response, error) in
             if let error = error {
-                self.remoteRequestHandler?.onError(errorMessage: error.localizedDescription)            }
-            guard let response = response else {
-                self.remoteRequestHandler?.onError(errorMessage: LocalizationConstant.nodataerror)
-                return
+                self.remoteRequestHandler?.onError(errorMessage: error.localizedDescription)
             }
             let decoder = JSONDecoder()
             do {
-                let data = try response.rawData()
-                let productList = try decoder.decode(ProductList.self, from: data)
-                self.remoteRequestHandler?.onDeliveryRetrieved(productList)
+                if let data = try response?.rawData() {
+                    let productList = try decoder.decode(ProductList.self, from: data)
+                    self.remoteRequestHandler?.onDeliveryRetrieved(productList)
+                }
             } catch {
                 self.remoteRequestHandler?.onError(errorMessage: error.localizedDescription)
             }

@@ -39,6 +39,7 @@ class DeliveryListInteractor: DeliveryListInteractorInputProtocol {
     
     func pullToRefresh(paging: Paging) {
         if !isDataLoading {
+            refreshStatus = paging.offset
             getDeliveryListFromServer(offset: paging.offset, limit: paging.limit)
         }
     }
@@ -50,7 +51,6 @@ class DeliveryListInteractor: DeliveryListInteractorInputProtocol {
             return
         }
         isDataLoading = true
-        print(1)
         remoteDatamanager?.retrieveDeliveryList(parameters)
     }
     
