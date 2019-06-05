@@ -175,6 +175,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9A00019722A7B77A0055329A /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				9ADAC7B82297CE3300525DA9 /* Info.plist */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		9A00019822A7B7920055329A /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				9ADAC7C32297CE3300525DA9 /* Info.plist */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		9A7700A7229D693400303D14 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,12 +292,12 @@
 		9ADAC7B52297CE3300525DA9 /* DOOR~DELIVERTests */ = {
 			isa = PBXGroup;
 			children = (
+				9A00019722A7B77A0055329A /* Config */,
 				9A7700A7229D693400303D14 /* View */,
 				9A7700A9229D69BC00303D14 /* Interactor */,
 				9A88BEC022A06397005E2C1E /* Wireframe */,
 				9A7700AD229D6A5400303D14 /* DataManager */,
 				9A7700AB229D6A1400303D14 /* Resource */,
-				9ADAC7B82297CE3300525DA9 /* Info.plist */,
 			);
 			path = "DOOR~DELIVERTests";
 			sourceTree = "<group>";
@@ -289,8 +305,8 @@
 		9ADAC7C02297CE3300525DA9 /* DOOR~DELIVERUITests */ = {
 			isa = PBXGroup;
 			children = (
+				9A00019822A7B7920055329A /* Config */,
 				9A7700C1229DBE8B00303D14 /* View */,
-				9ADAC7C32297CE3300525DA9 /* Info.plist */,
 			);
 			path = "DOOR~DELIVERUITests";
 			sourceTree = "<group>";
@@ -970,7 +986,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "DOOR~DELIVERTests/Info.plist";
+				INFOPLIST_FILE = "DOOR~DELIVERTests/Config/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -991,7 +1007,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "DOOR~DELIVERTests/Info.plist";
+				INFOPLIST_FILE = "DOOR~DELIVERTests/Config/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1011,7 +1027,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "DOOR~DELIVERUITests/Info.plist";
+				INFOPLIST_FILE = "DOOR~DELIVERUITests/Config/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1031,7 +1047,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "DOOR~DELIVERUITests/Info.plist";
+				INFOPLIST_FILE = "DOOR~DELIVERUITests/Config/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
