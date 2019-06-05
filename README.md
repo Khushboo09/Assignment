@@ -21,7 +21,9 @@ To run the project :
 # Design Pattern
 VIPER
 
-<img width="1081" alt="Screenshot 2019-06-04 at 11 48 46 AM" src="https://user-images.githubusercontent.com/31967294/58858332-ed08ce00-86c4-11e9-8e3d-31177b3408bc.png">
+
+<img width="1080" alt="Screenshot 2019-06-04 at 4 01 47 PM" src="https://user-images.githubusercontent.com/31967294/58872727-51865600-86e2-11e9-843f-beff790ca558.png">
+
 
 What is Viper ?
 Viper is a design pattern that implements ‘separation of concern’ paradigm. For each module VIPER has five (sometimes four) 
@@ -33,7 +35,6 @@ Upon receiving a response View alerts the Presenter.
 
 Presenter: Nucleus of a module. It gets user response from the View and work accordingly. 
 Only class to communicate with all the other components. Calls the router for wire-framing,
-Interactor to fetch data (network calls or local data calls), view to update the UI.
 
 Interactor: Has the business logics of an app. Primarily make API calls and local storage to fetch or save data.
 
@@ -63,7 +64,7 @@ Entity: Contains plain model classes used by the interactor.
 
 * Alamofire
 * SwiftyJSON
-* NotificationBannerSwift
+* Toast-Swift
 * SDWebImage
 * SwiftLint
 * OHHTTPStubs/Swift
@@ -88,12 +89,8 @@ Entity: Contains plain model classes used by the interactor.
 6.  Data caching is working in the following way
    - a) On launch when displaying list,initially local cache is checked for data
    - b) If the local cache is empty ,then the data is retrieved from server otherwise the data is displayed from cache.
-   - c) On pull to refresh,delivery list is pulled from server and then saved or updated to local cache
-   - d) If any cached data is deleted from the server then local cache data will not delete.
-   - e) On paging,if the data is present in core data for that offset,then it is displayed otherwise fetched from server.
-
-
-
+   - c) On pull to refresh,delivery list is pulled from server.Local cache is deleted and then new data is stored.
+   
 # Crashlytics
 
 Fabric Crashlytics has been already integrated in the application to get the crash reports. All the crash reports can be checked on fabric dashboard. Follow the below steps and just replace the Fabric API Key in info.plist file
@@ -109,7 +106,6 @@ Any changes can be made in .swiftlint.yml file, which is located in project root
 
 # Code Coverage
 - Just need to run Test on Xcode ( cmd+U )
-- Code coverage of CoreData class is less because NSBatchDeleteRequest is not supported for InMemory type persistence store coordinator.
 
 
 # Unit Testing
@@ -125,7 +121,10 @@ Any changes can be made in .swiftlint.yml file, which is located in project root
 ![Simulator Screen Shot - iPhone Xʀ - 2019-05-29 at 14 19 21](https://user-images.githubusercontent.com/31967294/58543314-deca3600-821c-11e9-886f-354dd39bb67d.png)
 
 
-
+# TODO / IMPROVMENTS 
+- UITestCases can be covered more
+- The coverage can be improved more.
+- Dependency injection can be implemented in VIPER.
 
 
 
