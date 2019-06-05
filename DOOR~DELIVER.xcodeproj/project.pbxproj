@@ -10,6 +10,7 @@
 		05312C3A0DC0286156C2A526 /* Pods_DOOR_DELIVER.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFEC938143A8F96BE4095384 /* Pods_DOOR_DELIVER.framework */; };
 		3C51F900FF8E7ECB934750D9 /* Pods_DOOR_DELIVERTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E95690957A59F6B15C6779C /* Pods_DOOR_DELIVERTests.framework */; };
 		43959F411C3950D79B0CFE76 /* Pods_DOOR_DELIVERUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76CA8262915DF29BCEF998D2 /* Pods_DOOR_DELIVERUITests.framework */; };
+		9A00019322A782480055329A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A00019522A782480055329A /* Localizable.strings */; };
 		9A7700B1229D6C7900303D14 /* DeliveryListViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7700B0229D6C7900303D14 /* DeliveryListViewTests.swift */; };
 		9A7700B3229D913800303D14 /* DeliveryDetailViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7700B2229D913800303D14 /* DeliveryDetailViewTests.swift */; };
 		9A7700B5229D96C900303D14 /* DeliveryListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7700B4229D96C900303D14 /* DeliveryListInteractorTests.swift */; };
@@ -23,7 +24,6 @@
 		9ADAC79F2297CE3000525DA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADAC79E2297CE3000525DA9 /* AppDelegate.swift */; };
 		9ADAC7A72297CE3000525DA9 /* DOOR_DELIVER.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9ADAC7A52297CE3000525DA9 /* DOOR_DELIVER.xcdatamodeld */; };
 		9ADAC7A92297CE3300525DA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ADAC7A82297CE3300525DA9 /* Assets.xcassets */; };
-		9ADAC7AC2297CE3300525DA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ADAC7AA2297CE3300525DA9 /* LaunchScreen.storyboard */; };
 		9ADAC7C22297CE3300525DA9 /* DOOR_DELIVERUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADAC7C12297CE3300525DA9 /* DOOR_DELIVERUITests.swift */; };
 		9ADAC7E42297DB3400525DA9 /* DeliveryListRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADAC7E32297DB3400525DA9 /* DeliveryListRemoteDataManager.swift */; };
 		9ADAC7E62297DEA600525DA9 /* DeliveryListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADAC7E52297DEA600525DA9 /* DeliveryListProtocols.swift */; };
@@ -47,7 +47,6 @@
 		9AF90345229CE3C100E360A2 /* DeliveryDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF90344229CE3C100E360A2 /* DeliveryDetailProtocols.swift */; };
 		9AF90347229CE44B00E360A2 /* DeliveryDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF90346229CE44B00E360A2 /* DeliveryDetailPresenter.swift */; };
 		9AF9A43222A1006D001CF478 /* DeliveryDetailVCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF9A43122A1006D001CF478 /* DeliveryDetailVCTest.swift */; };
-		9AF9A43522A12E7A001CF478 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9AF9A43722A12E7A001CF478 /* Localizable.strings */; };
 		9AFB4A672299549A00530746 /* ConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFB4A662299549A00530746 /* ConnectivityManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +73,8 @@
 		47845824CB37481688F0A320 /* Pods-DOOR~DELIVERUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DOOR~DELIVERUITests.release.xcconfig"; path = "Target Support Files/Pods-DOOR~DELIVERUITests/Pods-DOOR~DELIVERUITests.release.xcconfig"; sourceTree = "<group>"; };
 		75ACF22EFA68B43FF93D1DCC /* Pods-DOOR~DELIVERTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DOOR~DELIVERTests.debug.xcconfig"; path = "Target Support Files/Pods-DOOR~DELIVERTests/Pods-DOOR~DELIVERTests.debug.xcconfig"; sourceTree = "<group>"; };
 		76CA8262915DF29BCEF998D2 /* Pods_DOOR_DELIVERUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DOOR_DELIVERUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A00019422A782480055329A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9A00019622A7824B0055329A /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		9A7700B0229D6C7900303D14 /* DeliveryListViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryListViewTests.swift; sourceTree = "<group>"; };
 		9A7700B2229D913800303D14 /* DeliveryDetailViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryDetailViewTests.swift; sourceTree = "<group>"; };
 		9A7700B4229D96C900303D14 /* DeliveryListInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryListInteractorTests.swift; sourceTree = "<group>"; };
@@ -81,7 +82,6 @@
 		9A7700B8229DA3F300303D14 /* MockDeliveryData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MockDeliveryData.json; sourceTree = "<group>"; };
 		9A7700BA229DA83000303D14 /* XCStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCStub.swift; sourceTree = "<group>"; };
 		9A7700BC229DA83E00303D14 /* DeliveryListRemoteDataManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryListRemoteDataManagerTests.swift; sourceTree = "<group>"; };
-		9A7700C0229DA9F400303D14 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		9A88BEBC22A05CE3005E2C1E /* DeliveryDetailViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryDetailViewControllerTests.swift; sourceTree = "<group>"; };
 		9A88BEBE22A06382005E2C1E /* DeliveryListLocalDataManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryListLocalDataManagerTest.swift; sourceTree = "<group>"; };
 		9A88BEC122A0655C005E2C1E /* DeliveryDetailWireFrameTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetailWireFrameTest.swift; sourceTree = "<group>"; };
@@ -89,7 +89,6 @@
 		9ADAC79E2297CE3000525DA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9ADAC7A62297CE3000525DA9 /* DOOR_DELIVER.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DOOR_DELIVER.xcdatamodel; sourceTree = "<group>"; };
 		9ADAC7A82297CE3300525DA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9ADAC7AB2297CE3300525DA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9ADAC7AD2297CE3300525DA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9ADAC7B22297CE3300525DA9 /* DOOR~DELIVERTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DOOR~DELIVERTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ADAC7B82297CE3300525DA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -118,8 +117,6 @@
 		9AF90344229CE3C100E360A2 /* DeliveryDetailProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryDetailProtocols.swift; sourceTree = "<group>"; };
 		9AF90346229CE44B00E360A2 /* DeliveryDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryDetailPresenter.swift; sourceTree = "<group>"; };
 		9AF9A43122A1006D001CF478 /* DeliveryDetailVCTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetailVCTest.swift; sourceTree = "<group>"; };
-		9AF9A43622A12E7A001CF478 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		9AF9A43822A12E80001CF478 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		9AFB4A662299549A00530746 /* ConnectivityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectivityManager.swift; sourceTree = "<group>"; };
 		A5CE5D7A19A6FD45FA8A09C5 /* Pods-DOOR~DELIVERUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DOOR~DELIVERUITests.debug.xcconfig"; path = "Target Support Files/Pods-DOOR~DELIVERUITests/Pods-DOOR~DELIVERUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AFEC938143A8F96BE4095384 /* Pods_DOOR_DELIVER.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DOOR_DELIVER.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -219,8 +216,7 @@
 		9A7700BF229DA96500303D14 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				9AF9A43722A12E7A001CF478 /* Localizable.strings */,
-				9ADAC7AA2297CE3300525DA9 /* LaunchScreen.storyboard */,
+				9A00019522A782480055329A /* Localizable.strings */,
 				9ADAC7A82297CE3300525DA9 /* Assets.xcassets */,
 				9ADAC7A52297CE3000525DA9 /* DOOR_DELIVER.xcdatamodeld */,
 			);
@@ -545,8 +541,8 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				en,
 				"zh-HK",
 			);
 			mainGroup = 9ADAC7922297CE3000525DA9;
@@ -566,8 +562,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9ADAC7AC2297CE3300525DA9 /* LaunchScreen.storyboard in Resources */,
-				9AF9A43522A12E7A001CF478 /* Localizable.strings in Resources */,
+				9A00019322A782480055329A /* Localizable.strings in Resources */,
 				9ADAC7A92297CE3300525DA9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -801,20 +796,11 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9ADAC7AA2297CE3300525DA9 /* LaunchScreen.storyboard */ = {
+		9A00019522A782480055329A /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9ADAC7AB2297CE3300525DA9 /* Base */,
-				9A7700C0229DA9F400303D14 /* zh-HK */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		9AF9A43722A12E7A001CF478 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9AF9A43622A12E7A001CF478 /* en */,
-				9AF9A43822A12E80001CF478 /* zh-HK */,
+				9A00019422A782480055329A /* en */,
+				9A00019622A7824B0055329A /* zh-HK */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -955,7 +941,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nagarro.DOOR-DELIVER";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -973,7 +959,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nagarro.DOOR-DELIVER";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

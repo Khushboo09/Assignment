@@ -2,7 +2,7 @@ import XCTest
 import SwiftyJSON
 
 @testable import DOOR_DELIVER
- var interactor = DeliveryListInteractor()
+var interactor = DeliveryListInteractor()
 var productList: [Product]?
 class DeliveryListInteractorTests: XCTestCase {
     
@@ -13,7 +13,6 @@ class DeliveryListInteractorTests: XCTestCase {
         
         localDatamanager = CoreDataManagerTest()
         remoteDatamanager = APIManagerTest()
-        //remoteDatamanager?.remoteRequestHandler = remoteRequestHandler
         interactor.localDatamanager = localDatamanager
         interactor.remoteDatamanager = remoteDatamanager
     }
@@ -28,7 +27,7 @@ class DeliveryListInteractorTests: XCTestCase {
         interactor.retrieveDeliveryList(paging: Paging(offset: 0, limit: 20))
         XCTAssertEqual(productList?.count, 20)
     }
-
+    
     func testRefreshList() {
         localDatamanager?.isEmptyResponse = true
         interactor.pullToRefresh(paging: Paging(offset: 0, limit: 20))
@@ -41,7 +40,6 @@ class DeliveryListInteractorTests: XCTestCase {
         do {
             let deliveryList = try localDatamanager?.retrieveDeliveryList(offset: 0, limit: 20)
             XCTAssertNotNil(deliveryList) } catch {}
-        
     }
 }
 
@@ -67,15 +65,6 @@ class CoreDataManagerTest: DeliveryListLocalDataManagerInputProtocol {
         
     }
     
-    func updateProduct(updatedProduct: Product) throws -> Bool {
-        return false
-    }
-    
-    func checkProductExists(productID: Int64) throws -> Bool {
-        
-        return false
-    }
-    
     func removeProducts() throws {
         
     }
@@ -93,23 +82,23 @@ class CoreDataManagerTest: DeliveryListLocalDataManagerInputProtocol {
 }
 class APIManagerTest: DeliveryListRemoteDataManagerInputProtocol {
     var remoteRequestHandler: DeliveryListRemoteDataManagerOutputProtocol?
-
+    
     var isError = false
-
-   func retrieveDeliveryList(_ params: [String: Any]) {
+    
+    func retrieveDeliveryList(_ params: [String: Any]) {
         
         self.api(serviceName: Endpoints.Deliveries.fetch.url, parameters: params) { (response, error) in
             
             if self.isError == true {
                 _ = NSError(domain: "", code: 101, userInfo: [NSLocalizedDescriptionKey: "Something went wrong!"])
-                 } else {
+            } else {
                 let decoder = JSONDecoder()
                 do {
                     guard let data = try response?.rawData() else {
                         return
                     }
                     let list = try decoder.decode(ProductList.self, from: data)
-                     productList = list.productList
+                    productList = list.productList
                     
                 } catch {
                     print("error")
@@ -131,8 +120,8 @@ class APIManagerTest: DeliveryListRemoteDataManagerInputProtocol {
             let data = NSData(contentsOfFile: path ?? "")
             if let data = data {
                 do {
-                let json = try JSON(data: data as Data)
-                completionHandler(json, nil)
+                    let json = try JSON(data: data as Data)
+                    completionHandler(json, nil)
                 } catch {
                     
                 }

@@ -6,7 +6,7 @@ import CoreData
 class DeliveryDetailViewControllerTests: XCTestCase {
     
     let detailViewController = DeliveryDetailViewController()
-
+    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         detailViewController.loadView()
@@ -17,7 +17,7 @@ class DeliveryDetailViewControllerTests: XCTestCase {
         
         XCTAssertNotNil(detailViewController.detailView)
     }
-
+    
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
@@ -44,7 +44,7 @@ class DeliveryDetailViewControllerTests: XCTestCase {
         
         XCTAssertEqual(testRecord.location?.lattitude, detailViewController.detailView.pinAnnotation.coordinate.latitude)
         XCTAssertEqual(testRecord.location?.longitude, detailViewController.detailView.pinAnnotation.coordinate.longitude)
-    
+        
     }
     
 }

@@ -67,8 +67,9 @@ struct Constant {
     // MARK: Stored Properties
     static var dataSource = DataSource.dataBase
     static let pagingLimit = 20
-    static let fontSize: CGFloat = 14
+    static let fontSize: CGFloat = 16
     static let tableAccessibilityIdentifier = "table--deliveryTableView"
+    static let appToastMessageBackgroundColor = UIColor(red: 217/255.0, green: 96/255.0, blue: 86/255, alpha: 1.0)
 
 }
 
@@ -81,10 +82,11 @@ enum PersistenceError: Error {
 struct LocalizationConstant {
     static let listVCTitle = NSLocalizedString("listVCTitle", comment: "")
     static let detailVCTitle =  NSLocalizedString("detailVCTitle", comment: "")
-    static let interneterror = NSLocalizedString(ErrorMessege.internetError.rawValue, comment: "")
-    static let othererror = NSLocalizedString(ErrorMessege.other.rawValue, comment: "")
-    static let nodeliveries = NSLocalizedString("No deliveries.Retry by pulling upwards.", comment: "")
-    static let coredataerror = NSLocalizedString(ErrorMessege.coreDataError.rawValue, comment: "")
+    static let interneterror = NSLocalizedString("interneterror", comment: "")
+    static let othererror = NSLocalizedString("othererror", comment: "")
+    static let nodeliveries = NSLocalizedString("nodeliveries", comment: "")
+    static let coredataerror = NSLocalizedString("coredataerror", comment: "")
+    static let nodataerror = NSLocalizedString("nodataerror", comment: "")
 }
 
 struct Paging {

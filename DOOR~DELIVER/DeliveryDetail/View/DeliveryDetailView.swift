@@ -64,7 +64,7 @@ extension DeliveryDetailView {
     }
     
     func setBottomViewDetails(descriptionText: String, imageUrl: String) {
-        self.bottomDetailView.descriptionLabel?.text = descriptionText
+        self.bottomDetailView.descriptionTextView?.text = descriptionText
         self.bottomDetailView.imageView?.sd_setImage(with: URL.init(string: imageUrl), completed: nil)
     }
 }
@@ -73,17 +73,14 @@ extension DeliveryDetailView {
 extension DeliveryDetailView {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard annotation is MKPointAnnotation else { return nil }
-        
         let identifier = kDetailMapAnnotattion
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
-        
         if annotationView == nil {
             annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             annotationView!.canShowCallout = true
         } else {
             annotationView!.annotation = annotation
         }
-        
         return annotationView
     }
 }

@@ -1,0 +1,6 @@
+framework module Pods_DOOR_DELIVER {
+  umbrella header "Pods-DOOR~DELIVER-umbrella.h"
+
+  export *
+  module * { export * }
+}

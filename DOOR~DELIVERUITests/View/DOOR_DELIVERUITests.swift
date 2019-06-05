@@ -1,21 +1,17 @@
 import XCTest
 
 class DOORDELIVERUITests: XCTestCase {
-
+    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-
         // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-         XCUIApplication().launch()
-
+        XCUIApplication().launch()
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
     
     func testTableInteraction() {
-        
         // Assert that we are displaying the tableview
         let deliveryTableView = XCUIApplication().tables["table--deliveryTableView"]
         
@@ -27,7 +23,7 @@ class DOORDELIVERUITests: XCTestCase {
         if tableCells.count > 0 {
             let count: Int = (tableCells.count - 1)
             
-           let promise = expectation(description: "Wait for table cells")
+            let promise = expectation(description: "Wait for table cells")
             
             for i in stride(from: 0, to: count, by: 1) {
                 // Grab the first cell and verify that it exists and tap it
@@ -53,10 +49,10 @@ class DOORDELIVERUITests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
+    
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
-
+    
 }

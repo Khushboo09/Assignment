@@ -1,29 +1,27 @@
 import UIKit
 import SDWebImage
-import NotificationBannerSwift
+import Toast_Swift
+
 struct ActivityIndicator {
     static var activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
 }
+
 class DeliveryListViewController: UIViewController {
-    
     var listTableView = UITableView()
     var presenter: DeliveryListPresenterProtocol?
     var deliveryList: [Product] = []
     let refreshControl = UIRefreshControl()
-    let activityIndicator = UIActivityIndicatorView(style: .gray)
+    let bottomactivityIndicator = UIActivityIndicatorView(style: .gray)
     var paging = Paging(offset: 0, limit: Constant.pagingLimit)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setup()
         addRefreshControl()
         presenter?.fetchDeliveryList(paging: paging)
-        
     }
     
     // MARK: UI Update
-    
     func setup() {
         navigationController?.setNavigationBarHidden(false, animated: false)
         title = LocalizationConstant.listVCTitle
@@ -45,7 +43,6 @@ class DeliveryListViewController: UIViewController {
     }
     
     func addRefreshControl() {
-        
         refreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
         listTableView.addSubview(refreshControl)
     }
@@ -55,6 +52,7 @@ class DeliveryListViewController: UIViewController {
         self.presenter?.pullToRefresh(paging: paging)
     }
 }
+
 extension DeliveryListViewController: DeliveryListViewProtocol {
     
     func showError(errorMessage: String) {
@@ -62,7 +60,7 @@ extension DeliveryListViewController: DeliveryListViewProtocol {
             self.refreshControl.endRefreshing()
             if self.deliveryList.isEmpty {
                 let noDataLabel: UILabel = UILabel(frame: self.listTableView.bounds)
-                noDataLabel.text = "No deliveries.Retry by pulling upwards."
+                noDataLabel.text = LocalizationConstant.nodeliveries
                 noDataLabel.textAlignment = .center
                 noDataLabel.sizeToFit()
                 let deadlineTime = DispatchTime.now() + .seconds(1)
@@ -72,21 +70,19 @@ extension DeliveryListViewController: DeliveryListViewProtocol {
             }
             self.listTableView.backgroundView = nil
             self.listTableView.reloadData()
-            let banner = StatusBarNotificationBanner(title: errorMessage, style: .danger)
-            
-            banner.show(bannerPosition: .top)}}
+            var style = ToastStyle()
+            style.messageColor = UIColor.white
+            style.backgroundColor = Constant.appToastMessageBackgroundColor
+            self.view.makeToast(errorMessage, duration: 2.0, position: .top, style: style)
+        }
+    }
     
     func showProducts(with delivery: [Product]) {
-        
         listTableView.backgroundView = nil
-        
         if paging.offset == 0 {
-            self.refreshControl.endRefreshing()
             deliveryList.removeAll()
-            deliveryList = delivery
-        } else {
-            deliveryList.append(contentsOf: delivery)
         }
+        deliveryList.append(contentsOf: delivery)
         listTableView.reloadData()
     }
     
@@ -97,32 +93,34 @@ extension DeliveryListViewController: DeliveryListViewProtocol {
                 self.view.addSubview(ActivityIndicator.activityIndicator)
                 ActivityIndicator.activityIndicator.center = self.view.center
             }
-            ActivityIndicator.activityIndicator.startAnimating()}}
+            ActivityIndicator.activityIndicator.startAnimating()
+            
+        }
+    }
     
     func showBottomLoading() {
         DispatchQueue.main.async {
-            self.activityIndicator.startAnimating()
-            self.activityIndicator.frame = CGRect(x: 0, y: 0, width: self.listTableView.bounds.width, height: Constant.Dimension.height.rawValue)
-            self.listTableView.tableFooterView = self.activityIndicator
+            self.bottomactivityIndicator.startAnimating()
+            self.bottomactivityIndicator.frame = CGRect(x: 0, y: 0, width: self.listTableView.bounds.width, height: Constant.Dimension.height.rawValue)
+            self.listTableView.tableFooterView = self.bottomactivityIndicator
             self.listTableView.tableFooterView?.isHidden = false
         }
     }
     
     func hideLoading() {
         DispatchQueue.main.async {
-            
             ActivityIndicator.activityIndicator.stopAnimating()
             ActivityIndicator.activityIndicator.removeFromSuperview()
             self.refreshControl.endRefreshing()
-            //self.refreshControl.removeFromSuperview()
-            self.activityIndicator.stopAnimating()
+            self.bottomactivityIndicator.stopAnimating()
             self.listTableView.tableFooterView = UIView()
-        }}
+        }
+    }
 }
 
 extension DeliveryListViewController: UITableViewDataSource, UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: Constant.CellIdentifier.listCell) as! DeliveryTableViewCell
         cell.accessoryType = .disclosureIndicator
         cell.backgroundColor = .clear
@@ -131,7 +129,6 @@ extension DeliveryListViewController: UITableViewDataSource, UITableViewDelegate
         cell.productImageView.sd_setImage(with: imgURL, placeholderImage: nil, options: [], progress: nil, completed: nil)
         cell.descLabel.text = "\(product.description ?? "") at \(product.location?.address ?? "")"
         return cell
-        
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -145,17 +142,16 @@ extension DeliveryListViewController: UITableViewDataSource, UITableViewDelegate
         if distanceFromBottom < height {
             paging.offset = deliveryList.count
             if paging.offset != 0 {
-                self.presenter?.fetchDeliveryList(paging: paging)}
+                self.presenter?.fetchDeliveryList(paging: paging)
+            }
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return deliveryList.count }
+        return deliveryList.count
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         _ = presenter?.showDeliveryDetail(delivery: deliveryList[indexPath.row])
-        
     }
 }

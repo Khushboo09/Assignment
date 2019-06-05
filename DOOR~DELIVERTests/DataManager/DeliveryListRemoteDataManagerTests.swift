@@ -12,11 +12,11 @@ class DeliveryListRemoteDataManagerTests: XCTestCase {
         var params: [String: Any] = ["offset": 0]
         params["limit"] = 20
         DeliveryListRemoteDataManager().apiGet(serviceName: urlStr, parameters: params) { (json, error) in
-        XCTAssertNotNil(json)
+            XCTAssertNotNil(json)
             promise.fulfill()
-           
+            
         }
-       
+        
         waitForExpectations(timeout: 20) { error in
             if let error = error {
                 XCTAssertNotNil(error, "Webservice response returns with error")
@@ -35,7 +35,7 @@ class DeliveryListRemoteDataManagerTests: XCTestCase {
             XCTAssertNotNil(error)
             promise.fulfill()
         }
-    
+        
         waitForExpectations(timeout: 20) { error in
             if let error = error {
                 XCTAssertNotNil(error, "Webservice response returns with error")

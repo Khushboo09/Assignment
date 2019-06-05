@@ -7,29 +7,25 @@ class DeliveryListRemoteDataManager: DeliveryListRemoteDataManagerInputProtocol 
     var remoteRequestHandler: DeliveryListRemoteDataManagerOutputProtocol?
     
     func retrieveDeliveryList(_ params: [String: Any]) {
-        
         self.apiGet(serviceName: Endpoints.Deliveries.fetch.url, parameters: params) { (response, error) in
-            
             if let error = error {
-            self.remoteRequestHandler?.onError(errorMessage: error.localizedDescription)            }
-            guard let response = response else { return }
+                self.remoteRequestHandler?.onError(errorMessage: error.localizedDescription)            }
+            guard let response = response else {
+                self.remoteRequestHandler?.onError(errorMessage: LocalizationConstant.nodataerror)
+                return
+            }
             let decoder = JSONDecoder()
             do {
                 let data = try response.rawData()
                 let productList = try decoder.decode(ProductList.self, from: data)
-                
-                    self.remoteRequestHandler?.onDeliveryRetrieved(productList)
-                
+                self.remoteRequestHandler?.onDeliveryRetrieved(productList)
             } catch {
                 self.remoteRequestHandler?.onError(errorMessage: error.localizedDescription)
             }
-            
         }
-        
-        }
+    }
     
     func apiGet(serviceName: String, parameters: [String: Any]?, completionHandler: @escaping (JSON?, NSError?) -> Void) {
-        
         request(serviceName, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { (response: DataResponse<Any>) in
             switch response.result {
             case .success:
@@ -42,4 +38,5 @@ class DeliveryListRemoteDataManager: DeliveryListRemoteDataManagerInputProtocol 
             }
         }
     }
-    }
+    
+}

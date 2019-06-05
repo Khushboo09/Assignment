@@ -3,7 +3,7 @@ import UIKit
 class DeliveryDetailBottomView: UIView {
     
     var imageView: UIImageView?
-    var descriptionLabel: UILabel?
+    var descriptionTextView: UITextView?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -19,9 +19,9 @@ class DeliveryDetailBottomView: UIView {
         imageView = UIImageView()
         imageView?.contentMode = .scaleAspectFill
         imageView?.clipsToBounds = true
-        descriptionLabel = UILabel()
+        descriptionTextView = UITextView()
         
-        guard let imageView = imageView, let descriptionLabel = descriptionLabel else { return }
+        guard let imageView = imageView, let descriptionTextView = descriptionTextView else { return }
         
         addSubview(imageView)
         imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0).isActive = true
@@ -30,11 +30,14 @@ class DeliveryDetailBottomView: UIView {
         imageView.heightAnchor.constraint(equalToConstant: CGFloat(Constant.ImageDimension.kCellImageHeight)).isActive = true
         imageView.widthAnchor.constraint(equalToConstant: CGFloat(Constant.ImageDimension.kCellImageWidth)).isActive = true
         
-        addSubview(descriptionLabel)
-        descriptionLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 10).isActive = true
-        descriptionLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
-        descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
-        descriptionLabel.numberOfLines = 0
+        addSubview(descriptionTextView)
+        descriptionTextView.textAlignment = NSTextAlignment.natural
+        descriptionTextView.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 10).isActive = true
+        descriptionTextView.topAnchor.constraint(equalTo: topAnchor, constant: 0).isActive = true
+        descriptionTextView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
+        descriptionTextView.font=UIFont.systemFont(ofSize: Constant.fontSize)
+        descriptionTextView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0).isActive = true
+        descriptionTextView.isEditable = false
         setAutoresizingMaskIntoConstraintsForAllSubviews()
     }
     

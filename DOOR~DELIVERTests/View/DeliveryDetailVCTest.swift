@@ -16,7 +16,7 @@ class DeliveryDetailVCTest: XCTestCase {
     
     override func tearDown() {
         
-       deliveryDetail = nil
+        deliveryDetail = nil
         
     }
     
@@ -24,7 +24,7 @@ class DeliveryDetailVCTest: XCTestCase {
         let aRecord = Product(id: 0, address: "Mock Address", detail: "Mock Description", lattitude: 22.334, longitude: 123.39, imageURL: "Mock Url")
         return aRecord
     }
-
+    
     func testShowDeliveryDetail() {
         
         presenter.showDeliveryDetail()
@@ -35,14 +35,14 @@ class DeliveryDetailVCTest: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
-
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
             // Put the code you want to measure the time of here.
         }
     }
-
+    
 }
 
 class DeliveryDetailTest: DeliveryDetailViewProtocol {

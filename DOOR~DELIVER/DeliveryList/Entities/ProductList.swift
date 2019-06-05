@@ -14,4 +14,5 @@ struct ProductList: Codable {
         }
         self.productList = productList
     }
+    
 }

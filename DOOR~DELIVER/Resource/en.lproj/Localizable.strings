@@ -1,9 +1,9 @@
-
-
 "listVCTitle" = "Things to Deliver";
 "detailVCTitle" = "Delivery Details";
-"Please check your internet connection!" = "Please check your internet connection!";
-"Something went wrong." = "Something went wrong.";
-"No deliveries.Retry by pulling upwards." = "No deliveries.Retry by pulling upwards.";
-"Failed to fetch deliveries. Please pull to refresh." = "Failed to fetch deliveries. Please pull to refresh.";
+"interneterror" = "Please check your internet connection.";
+"othererror" = "Something went wrong.";
+"nodeliveries" = "Retry by pull to refresh";
+"coredataerror" = "Failed to fetch deliveries. Please pull to refresh.";
+"nodataerror" = "Unable to fetch the data. Please try again";
+
 

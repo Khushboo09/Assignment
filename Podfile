@@ -10,7 +10,7 @@ pod 'SwiftLint'
 pod 'Fabric'
 pod 'Crashlytics'
 pod 'SwiftyJSON'
-pod 'NotificationBannerSwift'
+pod 'Toast-Swift', '~> 5.0.0'
 pod 'OHHTTPStubs/Swift', '~> 7.0.0'
   # Pods for DOOR~DELIVER
   target 'DOOR~DELIVERTests' do
@@ -28,7 +28,7 @@ pod 'OHHTTPStubs/Swift', '~> 7.0.0'
     pod 'Fabric'
     pod 'Crashlytics'
     pod 'SwiftyJSON'
-    pod 'NotificationBannerSwift'
+    pod 'Toast-Swift', '~> 5.0.0'
     pod 'OHHTTPStubs/Swift', '~> 7.0.0'
   end
 end
