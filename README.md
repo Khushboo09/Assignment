@@ -16,10 +16,13 @@ To run the project :
 - c) Delete the existing Podfile.lock, Pods, and Assignment.xcworkspace file if exists
 - d) Run the "pod install" or "pod update"command
 - e) Open xcworkspace and run the app 
-If there is any issue in installing Pods:
-Run
-1) pod deintegrate
-2) pod update
+- f) If there is any issue in installing Pods:
+     Run
+    1) pod deintegrate
+    2) pod update
+
+
+
 
 # Design Pattern
 VIPER
