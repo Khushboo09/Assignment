@@ -64,7 +64,7 @@ Entity: Contains plain model classes used by the interactor.
 
 * Alamofire
 * SwiftyJSON
-* NotificationBannerSwift
+* Toast-Swift
 * SDWebImage
 * SwiftLint
 * OHHTTPStubs/Swift
@@ -89,12 +89,8 @@ Entity: Contains plain model classes used by the interactor.
 6.  Data caching is working in the following way
    - a) On launch when displaying list,initially local cache is checked for data
    - b) If the local cache is empty ,then the data is retrieved from server otherwise the data is displayed from cache.
-   - c) On pull to refresh,delivery list is pulled from server and then saved or updated to local cache
-   - d) If any cached data is deleted from the server then local cache data will not delete.
-   - e) On paging,if the data is present in core data for that offset,then it is displayed otherwise fetched from server.
-
-
-
+   - c) On pull to refresh,delivery list is pulled from server.Local cache is deleted and then new data is stored.
+   
 # Crashlytics
 
 Fabric Crashlytics has been already integrated in the application to get the crash reports. All the crash reports can be checked on fabric dashboard. Follow the below steps and just replace the Fabric API Key in info.plist file
@@ -125,7 +121,10 @@ Any changes can be made in .swiftlint.yml file, which is located in project root
 ![Simulator Screen Shot - iPhone Xʀ - 2019-05-29 at 14 19 21](https://user-images.githubusercontent.com/31967294/58543314-deca3600-821c-11e9-886f-354dd39bb67d.png)
 
 
-
+# TODO / IMPROVMENTS 
+- UITestCases can be covered more
+- The coverage can be improved more.
+- Dependency injection can be implemented in VIPER.
 
 
 
