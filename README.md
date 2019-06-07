@@ -121,10 +121,8 @@ Any changes can be made in .swiftlint.yml file, which is located in project root
 # Screenshots
 
 ![Simulator Screen Shot - iPhone Xʀ - 2019-05-29 at 14 19 21](https://user-images.githubusercontent.com/31967294/58543314-deca3600-821c-11e9-886f-354dd39bb67d.png)
-
-![Simulator Screen Shot - iPhone Xʀ - 2019-05-29 at 14 09 12](https://user-images.githubusercontent.com/31967294/58542517-60b95f80-821b-11e9-91bc-cd3c7c8329be.png)
-
 ![Simulator Screen Shot - iPhone Xʀ - 2019-05-29 at 14 09 02](https://user-images.githubusercontent.com/31967294/58542511-5d25d880-821b-11e9-8d55-51de89b2d5eb.png)
+![Simulator Screen Shot - iPhone Xʀ - 2019-05-29 at 14 09 12](https://user-images.githubusercontent.com/31967294/58542517-60b95f80-821b-11e9-91bc-cd3c7c8329be.png)
 
 # TODO / IMPROVMENTS 
 - UITestCases can be covered more
