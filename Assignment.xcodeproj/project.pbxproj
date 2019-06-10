@@ -718,7 +718,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 9766e46f3616b04bf4550edb3e91ea31bfd0b2f0 d60269b7810b260b51402d7c24747ec59f500c11751c4b209af75ab6d0f00297\n\n";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 98f9fb6c46922860a27c33fe342df9aeb356471c eaad9cf137a0529a6d54cfa0eb61d87d59c6a8ffae8b60f7758fd264fa401626\n\n\n";
 		};
 		9A7700C4229DC87900303D14 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1046,7 +1046,7 @@
 				PRODUCT_NAME = AssignmentUITests;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Assignment";
+				TEST_TARGET_NAME = Assignment;
 			};
 			name = Debug;
 		};
@@ -1067,7 +1067,7 @@
 				PRODUCT_NAME = AssignmentUITests;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Assignment";
+				TEST_TARGET_NAME = Assignment;
 			};
 			name = Release;
 		};
