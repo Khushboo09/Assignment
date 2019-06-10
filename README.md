@@ -36,17 +36,20 @@ These classes are following.
 
 1) View(UIView + Controller): 
 DeliveryListViewController & DeliveryDetailViewController
+
 Classes that has all the code to show the app interface of delivery list and delivery detail to the user and get their responses. 
 Upon receiving a response it alerts the Presenter.
 
 2) Interactor:
 -> DeliveryListInteractor
+
 Has the business logics of an app.
  - Primarily performs all the logic for paging and pull to refresh.
  - Interacts with Datasource to make API Calls and for local storage to fetch and save data.
  
 3) Presenter: 
 -> DeliveryListPresenter & DeliveryDetailPresenter
+
 Nucleus of a module. 
 It gets user response from the View like fetching delivery list,show delivery detail screen,pull to refresh etc and work accordingly. 
 Only class to communicate with all the other components. Calls the wireframe for wire-framing,
