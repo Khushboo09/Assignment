@@ -32,22 +32,25 @@ VIPER
 
 
 What is Viper ?
-Viper is a design pattern that implements ‘separation of concern’ paradigm. For each module VIPER has five (sometimes four) 
-different classes with distinct roles. No class go beyond its sole purpose. 
+Viper is a design pattern that implements ‘separation of concern’ paradigm. For each module VIPER has five different classes with distinct roles. No class go beyond its sole purpose. 
 These classes are following.
 
-View: Class that has all the code to show the app interface to the user and get their responses. 
-Upon receiving a response View alerts the Presenter.
+View(UIView + Controller): 
+-> DeliveryListViewController & DeliveryDetailViewController
+Classes that has all the code to show the app interface of delivery list and delivery detail to the user and get their responses. 
+Upon receiving a response it alerts the Presenter.
 
-Presenter: Nucleus of a module. It gets user response from the View and work accordingly. 
-Only class to communicate with all the other components. Calls the router for wire-framing,
+-> DeliveryListPresenter & DeliveryDetailPresenter
+Presenter: Nucleus of a module. It gets user response from the View like fetching delivery list,show delivery detail screen,pull to refresh etc and work accordingly. 
+Only class to communicate with all the other components. Calls the wireframe for wire-framing,
 
-Interactor: Has the business logics of an app. Primarily make API calls and local storage to fetch or save data.
+-> DeliveryListInteractor
+Interactor: Has the business logics of an app. Primarily make API calls(Alamofire) and local storage(Core Data) to fetch or save data .Primarily performs all the logic for paging,making API calls(Alamofire) and local storage(Core Data) to fetch or save data,pull to refresh.
 
-Responsible for making data calls but not necessarily from itself.
-
+-> DeliveryListWireFrame & DeliveryDetailWireFrame
 Router/Wireframe: Does the wire-framing. Listens from the presenter about which screen to present and executes that.
 
+-> Product
 Entity: Contains plain model classes used by the interactor.
 
 
