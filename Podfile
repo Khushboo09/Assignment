@@ -1,7 +1,7 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'DOOR~DELIVER' do
+target 'Assignment' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 pod 'Alamofire'
@@ -12,14 +12,14 @@ pod 'Crashlytics'
 pod 'SwiftyJSON'
 pod 'Toast-Swift', '~> 5.0.0'
 pod 'OHHTTPStubs/Swift', '~> 7.0.0'
-  # Pods for DOOR~DELIVER
-  target 'DOOR~DELIVERTests' do
+  # Pods for Assignment
+  target 'AssignmentTests' do
     inherit! :search_paths
     # Pods for testing
   end
   
   
-  target 'DOOR~DELIVERUITests' do
+  target 'AssignmentUITests' do
     inherit! :search_paths
     # Pods for testing
     pod 'Alamofire'

@@ -1,0 +1,9 @@
+"listVCTitle" = "Things to Deliver";
+"detailVCTitle" = "Delivery Details";
+"internetError" = "Please check your internet connection.";
+"otherError" = "Something went wrong.";
+"noDeliveries" = "Retry by pull to refresh";
+"coreDataError" = "Failed to fetch deliveries. Please pull to refresh.";
+"noDataError" = "Unable to fetch the data. Please try again";
+
+

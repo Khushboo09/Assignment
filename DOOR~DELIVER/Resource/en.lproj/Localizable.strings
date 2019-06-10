@@ -1,9 +1,0 @@
-"listVCTitle" = "Things to Deliver";
-"detailVCTitle" = "Delivery Details";
-"interneterror" = "Please check your internet connection.";
-"othererror" = "Something went wrong.";
-"nodeliveries" = "Retry by pull to refresh";
-"coredataerror" = "Failed to fetch deliveries. Please pull to refresh.";
-"nodataerror" = "Unable to fetch the data. Please try again";
-
-
