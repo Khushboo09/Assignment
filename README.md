@@ -28,30 +28,38 @@ To run the project :
 VIPER
 
 
-<img width="1080" alt="Screenshot 2019-06-04 at 4 01 47 PM" src="https://user-images.githubusercontent.com/31967294/58872727-51865600-86e2-11e9-843f-beff790ca558.png">
-
+<img width="1078" alt="Screenshot 2019-06-10 at 3 02 22 PM" src="https://user-images.githubusercontent.com/31967294/59189848-d0730700-8b98-11e9-9277-8c8eb90fe8b7.png">
 
 What is Viper ?
 Viper is a design pattern that implements ‘separation of concern’ paradigm. For each module VIPER has five different classes with distinct roles. No class go beyond its sole purpose. 
 These classes are following.
 
-View(UIView + Controller): 
--> DeliveryListViewController & DeliveryDetailViewController
+1) View(UIView + Controller): 
+DeliveryListViewController & DeliveryDetailViewController
 Classes that has all the code to show the app interface of delivery list and delivery detail to the user and get their responses. 
 Upon receiving a response it alerts the Presenter.
 
+2) Interactor:
+-> DeliveryListInteractor
+Has the business logics of an app.
+ - Primarily performs all the logic for paging and pull to refresh.
+ - Interacts with Datasource to make API Calls and for local storage to fetch and save data.
+ 
+3) Presenter: 
 -> DeliveryListPresenter & DeliveryDetailPresenter
-Presenter: Nucleus of a module. It gets user response from the View like fetching delivery list,show delivery detail screen,pull to refresh etc and work accordingly. 
+Nucleus of a module. It gets user response from the View like fetching delivery list,show delivery detail screen,pull to refresh etc and work accordingly. 
 Only class to communicate with all the other components. Calls the wireframe for wire-framing,
 
--> DeliveryListInteractor
-Interactor: Has the business logics of an app. Primarily make API calls(Alamofire) and local storage(Core Data) to fetch or save data .Primarily performs all the logic for paging,making API calls(Alamofire) and local storage(Core Data) to fetch or save data,pull to refresh.
-
+4) Router/Wireframe:
 -> DeliveryListWireFrame & DeliveryDetailWireFrame
-Router/Wireframe: Does the wire-framing. Listens from the presenter about which screen to present and executes that.
-
+ Does the wire-framing. Listens from the presenter about which screen to present and executes that.
+ 
+5) DATASOURCE:
+ - DeliveryListLocalDataManager: It manages data storage and retrieving from Core Data and interacts with interactor as well.
+ - DeliveryListLocalDataManager: It makes API calls using Alamofire and fetch result or error and interacts with interactor.
+ -  Entity: 
 -> Product
-Entity: Contains plain model classes used by the interactor.
+Contains plain model class.
 
 
 
