@@ -1,5 +1,5 @@
-# DOOR-DELIVERY
- DOOR-DELIVERY is an iOS application which shows list of deliverables that can be ANYTHING and delivered to ANYWHERE.
+# Assignment
+ It is an iOS application which shows list of deliverables that can be ANYTHING and delivered to ANYWHERE.
  The customer address is shown on Apple Map along with the customer name.
 
 
@@ -16,33 +16,55 @@ To run the project :
 - c) Delete the existing Podfile.lock, Pods, and Assignment.xcworkspace file if exists
 - d) Run the "pod install" or "pod update"command
 - e) Open xcworkspace and run the app 
+- f) If there is any issue in installing Pods:
+     Run
+    1) pod deintegrate
+    2) pod update
+
+
 
 
 # Design Pattern
 VIPER
 
 
-<img width="1080" alt="Screenshot 2019-06-04 at 4 01 47 PM" src="https://user-images.githubusercontent.com/31967294/58872727-51865600-86e2-11e9-843f-beff790ca558.png">
-
+<img width="1078" alt="Screenshot 2019-06-10 at 3 02 22 PM" src="https://user-images.githubusercontent.com/31967294/59189848-d0730700-8b98-11e9-9277-8c8eb90fe8b7.png">
 
 What is Viper ?
-Viper is a design pattern that implements ‘separation of concern’ paradigm. For each module VIPER has five (sometimes four) 
-different classes with distinct roles. No class go beyond its sole purpose. 
+Viper is a design pattern that implements ‘separation of concern’ paradigm. For each module VIPER has five different classes with distinct roles. No class go beyond its sole purpose. 
 These classes are following.
 
-View: Class that has all the code to show the app interface to the user and get their responses. 
-Upon receiving a response View alerts the Presenter.
+1) View(UIView + Controller): 
+DeliveryListViewController & DeliveryDetailViewController
 
-Presenter: Nucleus of a module. It gets user response from the View and work accordingly. 
-Only class to communicate with all the other components. Calls the router for wire-framing,
+Classes that has all the code to show the app interface of delivery list and delivery detail to the user and get their responses. 
+Upon receiving a response it alerts the Presenter.
 
-Interactor: Has the business logics of an app. Primarily make API calls and local storage to fetch or save data.
+2) Interactor:
+-> DeliveryListInteractor
 
-Responsible for making data calls but not necessarily from itself.
+Has the business logics of an app.
+ - Primarily performs all the logic for paging and pull to refresh.
+ - Interacts with Datasource to make API Calls and for local storage to fetch and save data.
+ 
+3) Presenter: 
+-> DeliveryListPresenter & DeliveryDetailPresenter
 
-Router/Wireframe: Does the wire-framing. Listens from the presenter about which screen to present and executes that.
+Nucleus of a module. 
+It gets user response from the View like fetching delivery list,show delivery detail screen,pull to refresh etc and work accordingly. 
+Only class to communicate with all the other components. Calls the wireframe for wire-framing,
 
-Entity: Contains plain model classes used by the interactor.
+4) Router/Wireframe:
+-> DeliveryListWireFrame & DeliveryDetailWireFrame
+ 
+ Does the wire-framing. Listens from the presenter about which screen to present and executes that.
+ 
+5) DATASOURCE:
+ - DeliveryListLocalDataManager: It manages data storage and retrieving from Core Data and interacts with interactor as well.
+ - DeliveryListLocalDataManager: It makes API calls using Alamofire and fetch result or error and interacts with interactor.
+ -  Entity: 
+(Product)
+Contains plain model class.
 
 
 
@@ -114,12 +136,9 @@ Any changes can be made in .swiftlint.yml file, which is located in project root
 
 # Screenshots
 
-![Simulator Screen Shot - iPhone Xʀ - 2019-05-29 at 14 09 02](https://user-images.githubusercontent.com/31967294/58542511-5d25d880-821b-11e9-8d55-51de89b2d5eb.png)
-
-![Simulator Screen Shot - iPhone Xʀ - 2019-05-29 at 14 09 12](https://user-images.githubusercontent.com/31967294/58542517-60b95f80-821b-11e9-91bc-cd3c7c8329be.png)
-
 ![Simulator Screen Shot - iPhone Xʀ - 2019-05-29 at 14 19 21](https://user-images.githubusercontent.com/31967294/58543314-deca3600-821c-11e9-886f-354dd39bb67d.png)
-
+![Simulator Screen Shot - iPhone Xʀ - 2019-05-29 at 14 09 02](https://user-images.githubusercontent.com/31967294/58542511-5d25d880-821b-11e9-8d55-51de89b2d5eb.png)
+![Simulator Screen Shot - iPhone Xʀ - 2019-05-29 at 14 09 12](https://user-images.githubusercontent.com/31967294/58542517-60b95f80-821b-11e9-91bc-cd3c7c8329be.png)
 
 # TODO / IMPROVMENTS 
 - UITestCases can be covered more
