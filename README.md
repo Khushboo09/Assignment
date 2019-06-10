@@ -47,11 +47,13 @@ Has the business logics of an app.
  
 3) Presenter: 
 -> DeliveryListPresenter & DeliveryDetailPresenter
-Nucleus of a module. It gets user response from the View like fetching delivery list,show delivery detail screen,pull to refresh etc and work accordingly. 
+Nucleus of a module. 
+It gets user response from the View like fetching delivery list,show delivery detail screen,pull to refresh etc and work accordingly. 
 Only class to communicate with all the other components. Calls the wireframe for wire-framing,
 
 4) Router/Wireframe:
 -> DeliveryListWireFrame & DeliveryDetailWireFrame
+ 
  Does the wire-framing. Listens from the presenter about which screen to present and executes that.
  
 5) DATASOURCE:
