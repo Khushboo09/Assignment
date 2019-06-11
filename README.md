@@ -141,7 +141,7 @@ Any changes can be made in .swiftlint.yml file, which is located in project root
 ![Simulator Screen Shot - iPhone Xʀ - 2019-05-29 at 14 09 12](https://user-images.githubusercontent.com/31967294/58542517-60b95f80-821b-11e9-91bc-cd3c7c8329be.png)
 
 # TODO / IMPROVMENTS 
-- -ve TestCases can be implemented more.
+- Negative unit tests can be implemented.
 - The coverage can be improved more.
 - Dependency injection can be implemented in VIPER.
 
