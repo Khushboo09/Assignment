@@ -84,7 +84,7 @@ extension DeliveryListInteractor: DeliveryListRemoteDataManagerOutputProtocol {
         offset = self.productList.count
         presenter?.didRetrieveDeliveries(deliveries: self.productList)
         if !deliveries.productList.isEmpty {
-            self.saveProductsIntoDB(products: deliveries.productList)
+            self.saveProductsIntoDB(products: self.productList)
         }
     }
     
