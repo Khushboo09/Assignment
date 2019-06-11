@@ -59,7 +59,6 @@ class DeliveryListInteractor: DeliveryListInteractorInputProtocol {
             return
         }
         isDataLoading = true
-        print(1)
         remoteDatamanager?.retrieveDeliveryList(parameters)
     }
     
