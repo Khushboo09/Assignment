@@ -15,11 +15,11 @@ class DeliveryListInteractor: DeliveryListInteractorInputProtocol {
     func retrieveDeliveryList() {
         let list = self.retrieveListFromDB(offset: offset, limit: Constant.pagingLimit)
         if list.isEmpty { isDataLoading ? nil :
-                self.getDeliveryListFromServer(offset: offset, limit: Constant.pagingLimit)
+            self.getDeliveryListFromServer(offset: offset, limit: Constant.pagingLimit)
         } else {
             productList += list.map {
-                    return Product(id: Int($0.id), address: $0.address ?? "", detail: $0.detail ?? "", lattitude: $0.latitude, longitude: $0.longitude, imageURL: $0.imageURL ?? "")
-                }
+                return Product(id: Int($0.id), address: $0.address ?? "", detail: $0.detail ?? "", lattitude: $0.latitude, longitude: $0.longitude, imageURL: $0.imageURL ?? "")
+            }
             self.offset = productList.count
             presenter?.hideLoading()
             presenter?.didRetrieveDeliveries(deliveries: productList)
@@ -34,7 +34,7 @@ class DeliveryListInteractor: DeliveryListInteractorInputProtocol {
         }
     }
     
-    private func retrieveListFromDB(offset: Int, limit: Int) -> [DeliveryProduct] {
+    func retrieveListFromDB(offset: Int, limit: Int) -> [DeliveryProduct] {
         do {
             guard let deliveryList = try localDatamanager?.retrieveDeliveryList(offset: offset, limit: limit)else {
                 self.updateOnError(error: LocalizationConstant.coreDataError)
@@ -52,7 +52,7 @@ class DeliveryListInteractor: DeliveryListInteractorInputProtocol {
         isDataLoading ? nil : getDeliveryListFromServer(offset: offset, limit: Constant.pagingLimit)
     }
     
-    private func getDeliveryListFromServer(offset: Int, limit: Int) {
+    func getDeliveryListFromServer(offset: Int, limit: Int) {
         let parameters = [APIKeys.offsetKey.rawValue: offset, APIKeys.limitKey.rawValue: limit]
         guard ConnectivityManager.isConnectedToInternet() else {
             self.updateOnError(error: LocalizationConstant.internetError)
@@ -85,15 +85,15 @@ extension DeliveryListInteractor: DeliveryListRemoteDataManagerOutputProtocol {
         offset = self.productList.count
         presenter?.didRetrieveDeliveries(deliveries: self.productList)
         if !deliveries.productList.isEmpty {
-        self.saveProductsIntoDB(products: deliveries.productList)
+            self.saveProductsIntoDB(products: deliveries.productList)
         }
     }
     
     func saveProductsIntoDB(products: [Product]) {
-            do {
-                try localDatamanager?.removeProducts()
-            } catch let error {
-                self.updateOnError(error: error.localizedDescription)
+        do {
+            try localDatamanager?.removeProducts()
+        } catch let error {
+            self.updateOnError(error: error.localizedDescription)
         }
         for productModel in products {
             do {

@@ -1,6 +1,6 @@
 import XCTest
 import SwiftyJSON
-
+import OHHTTPStubs
 @testable import Assignment
 
 class DeliveryListInteractorTests: XCTestCase, DeliveryListRemoteDataManagerOutputProtocol {
@@ -64,12 +64,24 @@ class DeliveryListInteractorTests: XCTestCase, DeliveryListRemoteDataManagerOutp
     }
 }
 
+class InteractorTest: XCTestCase {
+    
+    var interactor = DeliveryListInteractor()
+    
+    func testRetrieveDeliveryDBListWithError() {
+        let list = interactor.retrieveListFromDB(offset: -5, limit: 0)
+        XCTAssertEqual(list.count, 0)
+    }
+    
+}
+
 class CoreDataManagerTest: DeliveryListLocalDataManagerInputProtocol {
     
     func retrieveDeliveryList(offset: Int, limit: Int) throws -> [DeliveryProduct] {
         if isEmptyResponse == true {
             return []
         }
+        
         let testRecord = mockCoredataRecord()
         
         return [testRecord]
@@ -80,6 +92,7 @@ class CoreDataManagerTest: DeliveryListLocalDataManagerInputProtocol {
     }
     
     var isEmptyResponse: Bool = false
+    var isError: Bool = false
     
     func removeProducts() throws {
         

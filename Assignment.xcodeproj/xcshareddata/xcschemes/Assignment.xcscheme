@@ -27,7 +27,31 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "9ADAC7B12297CE3300525DA9"
+            BuildableName = "AssignmentTests.xctest"
+            BlueprintName = "AssignmentTests"
+            ReferencedContainer = "container:Assignment.xcodeproj">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "9ADAC7BC2297CE3300525DA9"
+            BuildableName = "AssignmentUITests.xctest"
+            BlueprintName = "AssignmentUITests"
+            ReferencedContainer = "container:Assignment.xcodeproj">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "9ADAC79A2297CE3000525DA9"
+            BuildableName = "Assignment.app"
+            BlueprintName = "Assignment"
+            ReferencedContainer = "container:Assignment.xcodeproj">
+         </BuildableReference>
+      </CodeCoverageTargets>
       <Testables>
          <TestableReference
             skipped = "NO">
