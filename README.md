@@ -61,7 +61,7 @@ Only class to communicate with all the other components. Calls the wireframe for
  
 5) DATASOURCE:
  - DeliveryListLocalDataManager: It manages data storage and retrieving from Core Data and interacts with interactor as well.
- - DeliveryListLocalDataManager: It makes API calls using Alamofire and fetch result or error and interacts with interactor.
+ - DeliveryListRemoteDataManager: It makes API calls using Alamofire and fetch result or error and interacts with interactor.
  -  Entity: 
 (Product)
 Contains plain model class.
